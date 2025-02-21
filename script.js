@@ -32,3 +32,14 @@ function endPress() {
     clearTimeout(pressTimer); 
     backspace();
 }
+
+function showTime() {
+    const now = new Date();
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayName = days[now.getDay()];
+    const localTimeString = now.toLocaleString();
+    document.getElementById('currentTime').innerHTML = `${localTimeString} (${dayName})`;
+}
+
+showTime();
+setInterval(showTime, 1000);
